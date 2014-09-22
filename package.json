@@ -1,0 +1,28 @@
+{
+  "name": "jQ2Cheerio",
+  "version": "0.0.0",
+  "description": "A jQuery specific selectors to Cheerio",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j33f/jQ2Cheerio.git"
+  },
+  "keywords": [
+    "jquery",
+    "cheerio"
+  ],
+  "author": "Jean-François Vial (http://about.me/Jeff_)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j33f/jQ2Cheerio/issues"
+  },
+  "homepage": "https://github.com/j33f/jQ2Cheerio",
+  "devDependencies": {
+    "cheerio": "~0.17.0",
+    "mocha": "~1.21.4",
+    "should": "~4.0.4"
+  }
+}
