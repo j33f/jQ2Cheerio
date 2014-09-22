@@ -93,6 +93,8 @@ Add some selectors to the translation table
 
 and `force` is a boolean saying if you want to overwrite existing selectors or not
 
-### .addFromFile(path, force)
+## Currently supported selectors
 
-Same as above, but `path` is (obviously) the path to a JSON file containing the selectors to add.
+- [:first](http://api.jquery.com/first-selector/)
+- [:last](http://api.jquery.com/last-selector/)
+- [:eq()](http://api.jquery.com/eq-selector/)
