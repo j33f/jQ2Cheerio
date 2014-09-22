@@ -87,11 +87,15 @@ Add some selectors to the translation table
 
 ```
 {
-	':first': '.first()'
+	':first': function(oSelector) {
+		// do things with oSelector
+		return string // string is like "p').first().find('"
+	}
 }
 ```
 
-and `force` is a boolean saying if you want to overwrite existing selectors or not
+and `force` is a boolean saying if you want to overwrite existing selectors or not.
+Have a look at the source code.
 
 ## Currently supported selectors
 
