@@ -1,6 +1,6 @@
 {
-  "name": "jQ2Cheerio",
-  "version": "0.0.0",
+  "name": "jq2cheerio",
+  "version": "0.0.1",
   "description": "A jQuery specific selectors to Cheerio",
   "main": "index.js",
   "scripts": {

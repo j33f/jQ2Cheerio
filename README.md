@@ -1,4 +1,4 @@
-jQ2Cheerio
+jq2cheerio
 ==========
 
 A jQuery specific selectors to Cheerio for nodeJs
@@ -13,7 +13,7 @@ This snippet show your how to directly execute some jQuery selector and get the 
 
 ```
 var cheerio = require('cheerio');
-var jQ = require('jQ2Cheerio');
+var jQ = require('jq2cheerio');
 
 var someHtml = [
 	'<p class="rick">Never gonna give you <sup>up</sup>, never gonna let you <sub>down</sub></p>',
@@ -35,7 +35,7 @@ You may want to control things or add something to the Cheerio command
 
 ```
 var cheerio = require('cheerio');
-var jQ = require('jQ2Cheerio');
+var jQ = require('jq2cheerio');
 
 var someHtml = [
 	'<p class="rick">Never gonna give you <sup>up</sup>, never gonna let you <sub>down</sub></p>',
@@ -59,7 +59,7 @@ var pHtml = eval (selector + ".html()");	// pHtml == 'Never gonna give you <sup>
 Will translate the jQuery selector `selector` to a Cheerio "command" using `cheerioVarName` as the… well the Cheerio variable name (default `$`)
 
 ```
-var jQ = require('jQ2Cheerio');
+var jQ = require('jq2cheerio');
 console.log( jQ.translate('p:first') ); // => $('p').first();
 console.log( jQ.translate('p:first', 'cheer') ); // => cheer('p').first();
 
