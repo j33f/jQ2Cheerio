@@ -17,3 +17,11 @@ var pClass = eval(getClass);				// pClass == 'rick'
 console.log(pClass);
 var pHtml = eval (selector + ".html()")		// pHtml == 'Never gonna give you <sup>up</sup>, never gonna let you <sub>down</sub>'
 console.log(pHtml);
+
+///
+
+var selector = jQ.translate('p:eq(1)');
+console.log(selector);
+
+var selector = jQ.translate('p:contains("lie")');
+console.log(selector);

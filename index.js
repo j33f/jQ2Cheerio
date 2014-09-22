@@ -2,7 +2,15 @@
  * The jQuery pseudo-selectors and their replacement
  */
 var selectors = {
-	':first': '.first()'
+	':first': function(oSelector) {
+		return oSelector.replace(':first ', "').first().find('");
+	}
+	, ':last': function(oSelector) {
+		return oSelector.replace(':last ', "').last().find('");
+	}
+	, ':eq()': function(oSelector) {
+		return oSelector.replace(/:eq\(([^)]*)\)/, "').eq($1).find('");
+	}
 };
 
 /**
@@ -22,38 +30,6 @@ var add = function(object, force) {
 };
 
 /**
- * Add some custom selectors on the fly from a file containing json
- * @param {String} the filepath
- * @param {Boolean} if true, overwrite existing entries
- */
-var addFromFile = function(fileName, force) {
-	fs.existsSync(fileName, function(exists) {
-	  if (exists) {
-	    fs.statSync(fileName, function(error, stats) {
-	    	if (error) {
-	    		throw (error);
-	    	}
-	      fs.openSync(fileName, "r", function(error, fd) {
-		    	if (error) {
-		    		throw (error);
-		    	}
-	        var buffer = new Buffer(stats.size);
-	 
-	        fs.readSync(fd, buffer, 0, buffer.length, null, function(error, bytesRead, buffer) {
-	          var data = buffer.toString('utf8', 0, buffer.length);
-	          data = JSON.parse(data);
-	          add(data, force);
-	          fs.close(fd);
-	        });
-	      });
-	    });
-	  } else {
-	  	throw new Error('[jQ2Cheerio] Unable to find ' + fileName);
-	  }
-	});
-}
-
-/**
  * Translate the jQuery selector to a Cheerio "string"
  * @param {String} the selector
  * @param {String} the Cheerio var name you want to use, defaults to '$'
@@ -63,11 +39,10 @@ var translate = function(oSelector, cheerioVarName) {
 	if (!cheerioVarName) cheerioVarName = '$'
 	oSelector += ' '; // add a trailing space, important !
 	for (var selector in selectors) {
-		oSelector = oSelector.replace(selector + ' ', "')" + selectors[selector] + ".find('");
+		oSelector = selectors[selector](oSelector);
 	}
 	oSelector = cheerioVarName + "('" + oSelector + "')";
-	// delete the empty find
-	oSelector = oSelector.replace(".find('')", '');
+	oSelector = oSelector.replace(/\.find\(' *'\)/, '');
 	return oSelector;
 };
 
@@ -77,6 +52,5 @@ var exec = function($,selector) {
 
 module.exports.selectors = selectors;
 module.exports.add = add;
-module.exports.add = addFromFile;
 module.exports.translate = translate;
 module.exports.exec = exec;

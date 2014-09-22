@@ -1,6 +1,6 @@
 {
   "name": "jq2cheerio",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A jQuery specific selectors to Cheerio",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/j33f/jQ2Cheerio",
   "devDependencies": {
-    "cheerio": "~0.17.0",
+    "cheerio": "latest",
     "mocha": "~1.21.4",
     "should": "~4.0.4"
   }
