@@ -5,6 +5,14 @@ A jQuery specific selectors to Cheerio for nodeJs
 
 Cherrio is great but not fully compatible with jQuery (pseudo) selectors, this module aim to make jQuery selectors to work with Cheerio.
 
+## Installation
+
+As usual 
+
+```
+npm install jq2cheerio
+```
+
 ## Usage
 
 ### The easy way
