@@ -36,4 +36,3 @@ var selector = jQ.translate('p:odd');
 console.log(selector);
 var res = jQ.exec($, 'p:odd');
 console.log(res.html());
-console.dir($(':first-child'));
