@@ -19,9 +19,21 @@ var pHtml = eval (selector + ".html()")		// pHtml == 'Never gonna give you <sup>
 console.log(pHtml);
 
 ///
-
+console.log (':eq() : ');
 var selector = jQ.translate('p:eq(1)');
 console.log(selector);
+var res = jQ.exec($, 'p:eq(1)');
+console.log(res.html());
 
-var selector = jQ.translate('p:contains("lie")');
+console.log (':even : ');
+var selector = jQ.translate('p:even');
 console.log(selector);
+var res = jQ.exec($, 'p:even');
+console.log(res.html());
+
+console.log (':odd : ');
+var selector = jQ.translate('p:odd');
+console.log(selector);
+var res = jQ.exec($, 'p:odd');
+console.log(res.html());
+console.dir($(':first-child'));

@@ -102,3 +102,5 @@ Have a look at the source code.
 - [:first](http://api.jquery.com/first-selector/)
 - [:last](http://api.jquery.com/last-selector/)
 - [:eq()](http://api.jquery.com/eq-selector/)
+- [:even](http://api.jquery.com/even-selector/)
+- [:odd](http://api.jquery.com/odd-selector/)
