@@ -17,7 +17,7 @@ npm install jq2cheerio
 
 ### The easy way
 
-This snippet show your how to directly execute some jQuery selector and get the resulting Cheerio object
+This snippet show you how to directly execute some jQuery selector and get the resulting Cheerio object
 
 ```
 var cheerio = require('cheerio');
